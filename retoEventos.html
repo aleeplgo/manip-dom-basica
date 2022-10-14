@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reto de eventos JS 🤓</title>
+</head>
+
+<body id="body">
+    <h2>Reto de eventos JS 🤓</h2>
+    <form action="">
+        <input id="ingresaTexto" type="text" placeholder="Pon algo 👀">
+        <br>
+        <br>
+        <button type="button" id="clickAqui">Try It!</button>
+        <p class="textoFinal"></p>
+    </form>
+    <script>
+        console.log("Hola desde el reto de los eventos🤓");
+
+        //Enlazamos los elementos html para acceder con js 
+        const body = document.getElementById("body");
+        const ingresaTexto = document.getElementById("ingresaTexto");
+        const clickAqui = document.getElementById("clickAqui");
+        const textoFinal = document.querySelector(".textoFinal");
+
+        clickAqui.addEventListener("mouseover", Over);
+        clickAqui.addEventListener("click", Cliick);
+        clickAqui.addEventListener("mouseout", Out);
+
+
+
+        function Over() {
+            let valor = ingresaTexto.value;
+            if (valor === "") {
+                textoFinal.innerHTML += `¡Te caché sobre el botón sin escribir! 😒 <br>`;
+            } else {
+                textoFinal.innerHTML += `${valor} <br>`;
+            }
+        }
+
+        function Cliick() {
+            let valor = ingresaTexto.value;
+            if (valor === "") {
+                alert(`¡Te caché dando click el botón sin escribir! 😒`);
+            } else {
+                alert(`${valor}`);
+            }
+        }
+
+        function Out() {
+            let valor = ingresaTexto.value;
+            if (valor === "") {
+                textoFinal.innerHTML += `¡No quites tu mouse🤭 sin escribir!. 😒. Ahhh se me olvidaba por quitar tu mouse ya cambió de color tu fondo. <br>`;
+                body.style.backgroundColor = `rgb(${Math.floor(Math.random()*255)}, ${Math.floor(Math.random()*255)}, ${Math.floor(Math.random()*255)})`;;
+            } else {
+                textoFinal.innerHTML += `¡No quites tu mouse🤭!. <strong> Por cierto escribiste: ${valor}. Ahhh se me olvidaba por quitar tu mouse ya cambió de color tu fondo. </strong> ✨👀✨ <br>`;
+                body.style.backgroundColor = `rgb(${Math.floor(Math.random()*255)}, ${Math.floor(Math.random()*255)}, ${Math.floor(Math.random()*255)})`;;
+            }
+        }
+    </script>
+</body>
+
+</html>

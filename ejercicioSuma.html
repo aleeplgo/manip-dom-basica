@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suma 2+2 ¡Tú puedes!🤓</title>
+</head>
+<h1>Suma 2+2 ¡Tú puedes!🤓</h1>
+<p id="resultado"></p>
+
+<body>
+    <script>
+        function Suma1() {
+            alert("Tienes 4 oportunidades para acertar. ¡Vamos tú puedes! 🤓");
+            const suma1 = Number(prompt("2 + 2"));
+            const resultado = document.getElementById("resultado");
+
+            if (suma1 === 4) {
+                return resultado.innerText = "¡Felicidades!. Así es 2+2=4 🤓🎉🥳";
+            } else {
+                for (let i = 0; i < 3; i++) {
+                    const suma2 = Number(prompt("2 + 2"));
+                    if (suma2 === 4) {
+                        return resultado.innerText = "¡Felicidades!. Así es 2+2=4 🤓🎉🥳";
+                    } else {
+                        for (let i = 0; i < 3; i++) {
+                            const suma3 = Number(prompt("2 + 2"));
+                            if (suma3 === 4) {
+                                return resultado.innerText = "¡Felicidades!. Así es 2+2=4 🤓🎉🥳";
+                            } else {
+                                for (let i = 0; i < 3; i++) {
+                                    const suma4 = Number(prompt("2 + 2"));
+                                    if (suma4 === 4) {
+                                        return resultado.innerText = "¡Felicidades!. Así es 2+2=4 🤓🎉🥳";
+                                    } else {
+                                        return resultado.innerText = "Ups! Se acabaron las oportunidades 🥺. Inténtalo de nuevo ";
+
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+        }
+        Suma1();
+    </script>
+</body>
+
+</html>
